@@ -22,16 +22,10 @@ public class User {
     @GeneratedValue
     private Long id;
     private String login;
-    private String name;
-    private String surname;
     private String password;
-    private String email;
 
-    public User(String login, String encode, String email, String name, String surname) {
+    public User(String login, String encode) {
         this.login = login;
         this.password = encode;
-        this.email = email;
-        this.name = name;
-        this.surname = surname;
     }
 }

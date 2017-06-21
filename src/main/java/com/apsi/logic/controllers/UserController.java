@@ -20,12 +20,9 @@ public class UserController {
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public void registerNewUser(@RequestParam("userName") final String userName,
-                                @RequestParam("password") final String password,
-                                @RequestParam("email") final String email,
-                                @RequestParam("name") final String name,
-                                @RequestParam("surname") final String surname)
+                                @RequestParam("password") final String password)
             throws UserAlreadyExistsException {
 
-        userService.register(userName, password, email, name, surname);
+        userService.register(userName, password);
     }
 }

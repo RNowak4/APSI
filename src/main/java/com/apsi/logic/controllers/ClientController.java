@@ -19,13 +19,12 @@ public class ClientController {
 
     @RequestMapping(value = "/client", method = RequestMethod.POST)
     public void registerNewClient(@RequestParam("userName") final String userName,
-                                @RequestParam("password") final String password,
-                                @RequestParam("email") final String email,
-                                @RequestParam("name") final String name,
-                                @RequestParam("surname") final String surname,
-                                @RequestParam(value = "surname", required = false) final String address)
+                                  @RequestParam("email") final String email,
+                                  @RequestParam("name") final String name,
+                                  @RequestParam("surname") final String surname,
+                                  @RequestParam(value = "surname", required = false) final String address)
             throws ClientAlreadyExistsException {
 
-        clientService.registerClient(userName, password, email, name, surname, address);
+        clientService.registerClient(userName, email, name, surname, address);
     }
 }

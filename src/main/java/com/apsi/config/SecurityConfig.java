@@ -6,6 +6,7 @@ import com.apsi.security.AuthFailureHandler;
 import com.apsi.security.AuthSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,6 +20,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -45,8 +47,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("login").passwordParameter("password")
                 .successHandler(authSuccessHandler).failureHandler(authFailureHandler)
                 .and().logout().permitAll().logoutUrl("/logout")
+                .logoutSuccessHandler((new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK)))
                 .and().authorizeRequests()
                 .antMatchers("/user/**").permitAll()
+                .antMatchers("/logout").permitAll()
                 .anyRequest().authenticated();
     }
 

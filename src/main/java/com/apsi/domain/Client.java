@@ -24,13 +24,11 @@ public class Client {
     private String login;
     private String name;
     private String surname;
-    private String password;
     private String email;
     private String address;
 
-    public Client(String login, String password, String email, String name, String surname, String address) {
+    public Client(String login, String email, String name, String surname, String address) {
         this.login = login;
-        this.password = password;
         this.email = email;
         this.surname = surname;
         this.name = name;

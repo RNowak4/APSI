@@ -20,10 +20,9 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void register(final String login, final String password, final String email,
-                         final String name, final String surname)
+    public void register(final String login, final String password)
             throws UserAlreadyExistsException {
-        final User user = new User(login, passwordEncoder.encode(password), email, name, surname);
+        final User user = new User(login, passwordEncoder.encode(password));
         final Optional<User> foundUser = userRepository.findUserByLogin(login);
 
         if (foundUser.isPresent()) {

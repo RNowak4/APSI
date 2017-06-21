@@ -13,16 +13,15 @@ import java.util.Optional;
 @Service
 public class ClientService {
     private ClientRepository clientRepository;
-    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
     }
 
-    public void registerClient(String login, String password, String email, String name, String surname, String address)
+    public void registerClient(String login, String email, String name, String surname, String address)
             throws ClientAlreadyExistsException {
-        final Client client = new Client(login, passwordEncoder.encode(password), email, name, surname, address);
+        final Client client = new Client(login, email, name, surname, address);
         final Optional<Client> foundUser = clientRepository.findClientByLogin(login);
 
         if (foundUser.isPresent()) {
