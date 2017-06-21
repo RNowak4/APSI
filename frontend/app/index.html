@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/ng-notify/src/styles/ng-notify.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-toggle/dist/angular-bootstrap-toggle.min.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="inzFrontendApp">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Add your site or application content here -->
+<div class="header-panel shadow-z-2 text-primary-color" ng-controller="HeaderCtrl">
+  <div class="navbar navbar-info">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-material-light-blue-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">inzFrontend</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-material-light-blue-collapse">
+        <ul class="nav navbar-nav">
+          <li><a ng-href="/login" ng-show="!isLoggedIn()">Zaloguj się</a></li>
+          <li><a ng-href="/userRegister" ng-show="!isLoggedIn()">Załóż konto</a></li>
+          <li><a ng-href="/addClient" ng-show="isLoggedIn()">Dodaj użytkownika</a></li>
+          <li><a ng-href="/addComplaint" ng-show="isLoggedIn()">Zgłoś reklamację</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown" ng-show="isLoggedIn()">
+              Twoje konto
+              <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="divider"></li>
+              <li><a ng-href="/" ng-click="logout()">Wyloguj się</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div ng-view=""></div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <p><span class="glyphicon glyphicon-heart"></span>APSI. Wszelkie prawa zastrzeżonoe.</p>
+  </div>
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
+<script src="bower_components/angular-md5/angular-md5.js"></script>
+<script src="bower_components/sockjs/sockjs.js"></script>
+<script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+<script src="bower_components/ng-stomp/src/ng-stomp.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+<script src="bower_components/angular-bootstrap-toggle/dist/angular-bootstrap-toggle.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/addcomplaint.js"></script>
+<script src="scripts/services/addcomplaintservice.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/services/loginservice.js"></script>
+<script src="scripts/controllers/userregister.js"></script>
+<script src="scripts/services/userregisterservice.js"></script>
+<script src="scripts/controllers/header.js"></script>
+<script src="scripts/controllers/clientcreate.js"></script>
+<script src="scripts/services/clientcreateservice.js"></script>
+<!-- endbuild -->
+</body>
+</html>

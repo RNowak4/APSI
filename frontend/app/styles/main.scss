@@ -1,0 +1,220 @@
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import "font-awesome/scss/font-awesome";
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.dark-primary-color {
+  background: #455A64 !important;
+}
+
+.default-primary-color {
+  background: #607D8B !important;
+}
+
+.light-primary-color {
+  background: #CFD8DC;
+}
+
+.text-primary-color {
+  color: #FFFFFF;
+}
+
+.accent-color {
+  background: #a9dbff;
+}
+
+.accent {
+  color: #a9dbff;
+}
+
+.accent:hover {
+  color: #01af9f;
+}
+
+.primary-text-color {
+  color: #212121;
+}
+
+.secondary-text-color {
+  color: #727272;
+}
+
+.divider-color {
+  border-color: #B6B6B6;
+}
+
+.wide-button {
+  width: 100%;
+}
+
+.btn-submit {
+  @extend .btn-success;
+  background-color: #a9dbff;
+}
+
+body {
+  padding: 0;
+  color: #333;
+  font-family: 'Tillana', serif;
+
+  .navbar, .navbar.navbar-default {
+    //background-color: #3c763d;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #607D8B;
+  }
+  .navbar-default .navbar-nav > li > a {
+    font-size: large;
+  }
+  .form-group.is-focused label, .form-group.is-focused label.control-label {
+    color: #607D8B;
+  }
+  .form-group.is-focused .form-control {
+    outline: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#607D8B), to(#607D8B)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#607D8B, #607D8B), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: -o-linear-gradient(#607D8B, #607D8B), -o-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: linear-gradient(#607D8B, #607D8B), linear-gradient(#D2D2D2, #D2D2D2);
+  }
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  //background: url("../images/library.jpg");
+  //background-size: cover;
+  z-index: -1; /* Keep the background behind the content */
+  height: 20%;
+  width: 20%; /* Using Glen Maddern's trick /via @mente */
+
+  /* don't forget to use the prefixes you need */
+  transform: scale(5);
+  transform-origin: top left;
+  filter: blur(0.5px);
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  margin-bottom: 10px;
+  opacity: 0.9;
+
+  .container {
+    width: 50%;
+    vertical-align: middle;
+  }
+}
+
+.footer {
+  opacity: 0.9;
+  padding-top: 19px;
+  color: #2b2b2b;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  .container, p {
+    text-align: center;
+  }
+}
+
+.includes {
+  vertical-align: middle;
+  padding-top: 40px;
+  border-width: 5px;
+  border-color: #006600;
+  width: 80%;
+  margin-left: 10%;
+
+  .jumbotron {
+    vertical-align: middle !important;
+  }
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  //text-align: center;
+  //background-color: #3D2B1F;
+  opacity: 0.9;
+  border-width: 2px;
+  //border-radius: 20px !important;
+  .btn-facebook {
+    @extend .btn-info;
+    background-color: #3B5998 !important;
+    border: blue;
+  }
+
+  .btn-facebook:hover {
+    background-color: #4f679a !important;
+  }
+
+  .site-header-actions-btn {
+    float: right;
+    font-weight: 500;
+  }
+
+  .form-control:focus {
+    border-color: #385088;
+    border-width: 2px;
+    box-shadow: none;
+  }
+}
+
+.modal-content {
+  text-align: center;
+  background-color: #3D2B1F;
+  opacity: 0.95;
+  border-width: 2px;
+  border-radius: 20px !important;
+  width: 90%;
+  height: 90%;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    //max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

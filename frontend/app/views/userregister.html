@@ -1,0 +1,47 @@
+<div class="jumbotron">
+  <div class="container sign-in-up">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="tab-content">
+
+          <div class="tab-pane fade in active">
+            <form name="patientCreateForm">
+              <div class="form-group label-floatin">
+                <div class="right-inner-addon">
+                  <label for="login-input" class="control-label">Login</label>
+                  <input id="login-input" class="form-control input-lg" type="text" ng-model="username"
+                         ng-required="true">
+                </div>
+              </div>
+
+              <div class="form-group label-floatin">
+                <div class="right-inner-addon">
+                  <label for="password-input" class="control-label">Hasło</label>
+                  <input id="password-input" class="form-control input-lg" type="password" ng-model="password"
+                         ng-required="true" ng-minlength="5" ng-maxlength="20">
+                </div>
+              </div>
+
+              <div class="form-group label-floatin">
+                <div class="right-inner-addon">
+                  <label for="password-repeat-input" class="control-label">Powtórz hasło</label>
+                  <input id="password-repeat-input" class="form-control input-lg" type="password"
+                         ng-model="passwordRepeat"
+                         ng-required="true" ng-minlength="5">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-raised btn-primary wide-button" ng-click="createUserAccount()"
+                    id="reg-btn"
+                    ng-disabled="!patientCreateForm.$valid">
+              <span ng-show="inLoginProgress" class="fa fa-spinner fa-spin"></span>Utwórz konto pacjenta
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
