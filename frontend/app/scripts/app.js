@@ -35,12 +35,12 @@ angular
       })
       .when('/addComplaint', {
         templateUrl: 'views/addcomplaint.html',
-        controller: 'AddComplaintService',
+        controller: 'AddcomplaintCtrl',
         controllerAs: 'addcomplaint'
       })
       .when('/addClient', {
         templateUrl: 'views/clientcreate.html',
-        controller: 'AnswersCtrl',
+        controller: 'ClientcreateCtrl',
         controllerAs: 'answers'
       })
       .when('/login', {

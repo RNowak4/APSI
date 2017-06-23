@@ -10,18 +10,19 @@
 angular.module('inzFrontendApp')
   .service('AddComplaintService', function (ngNotify, $http) {
 
-    this.createFirstAdmin = function (adminPassword) {
+    this.createComplaint = function (username, text) {
       $http({
         method: 'POST',
-        url: '/user/firstAdmin',
+        url: '/complaint',
         dataType: 'json',
         params: {
-          password: adminPassword
+          userName: username,
+          text: text
         }
       }).then(function () {
-        ngNotify.set('Zalozono konto pierwszego admina!', 'success');
+        ngNotify.set('Pomyslnie dodano reklamacje!', 'success');
       }, function (error) {
-        ngNotify.set('Nie udalo sie zalozyc konta pierwszego admina!', 'error');
+        ngNotify.set('Nie udalo sie dodac reklamacji!', 'error');
       });
     }
   });

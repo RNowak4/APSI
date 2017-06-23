@@ -18,11 +18,6 @@ angular.module('inzFrontendApp')
 
     $scope.inLoginProgress = false;
 
-    $scope.createClient = function () {
-      // TODO...
-    };
-
-    // TODO remove
     $scope.createUserAccount = function () {
       $scope.inLoginProgress = true;
       var login = $scope.username;

@@ -22,7 +22,7 @@ public class ClientController {
                                   @RequestParam("email") final String email,
                                   @RequestParam("name") final String name,
                                   @RequestParam("surname") final String surname,
-                                  @RequestParam(value = "surname", required = false) final String address)
+                                  @RequestParam(value = "address", required = false) final String address)
             throws ClientAlreadyExistsException {
 
         clientService.registerClient(userName, email, name, surname, address);
